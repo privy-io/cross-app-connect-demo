@@ -22,7 +22,7 @@ const SignMessage = () => {
         onClick_={() => {
           signMessage({
             account:address,
-            message: `Signing with WAGMI address: ${shorten(address)}`,
+            message: `Signing with address: ${shorten(address)}`,
           });
         }}
         cta="Sign!"

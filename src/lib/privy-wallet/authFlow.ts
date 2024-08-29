@@ -1,5 +1,5 @@
-import {generateKeyPair, recoverSharedSecret} from '../crypto';
-import {triggerPopup} from './popupFlow';
+import { generateKeyPair, recoverSharedSecret } from "../crypto";
+import { triggerPopup } from "./popupFlow";
 
 export default async function sendConnectionRequestToPopup({
   appId,
@@ -11,19 +11,22 @@ export default async function sendConnectionRequestToPopup({
   const url = new URL(`${providerUrl}/cross-app/connect`);
 
   // generate requester keys
-  const {privateKey, publicKey} = generateKeyPair();
+  const { privateKey, publicKey } = generateKeyPair();
 
   // Append params to url
-  url.searchParams.set('requester_public_key', publicKey);
-  url.searchParams.set('connect', 'true');
-  url.searchParams.set('provider_app_id', appId);
-  url.searchParams.set('requester_origin', window.location.origin);
+  url.searchParams.set("requester_public_key", publicKey);
+  url.searchParams.set("connect", "true");
+  url.searchParams.set("provider_app_id", appId);
+  url.searchParams.set("requester_origin", window.location.origin);
 
-  const {address, providerPublicKey} = await triggerPopup(url);
+  const { address, providerPublicKey } = await triggerPopup(url);
 
-  const sharedSecret = recoverSharedSecret({privateKey, publicKey: providerPublicKey});
+  const sharedSecret = recoverSharedSecret({
+    privateKey,
+    publicKey: providerPublicKey,
+  });
 
-  return {address, sharedSecret, publicKey, privateKey};
+  return { address, sharedSecret, publicKey, privateKey };
 }
 
 /**
@@ -33,16 +36,16 @@ export default async function sendConnectionRequestToPopup({
  * @param param.appId {string} provider app's Privy app ID
  * @returns
  */
-export async function getCrossAppProviderDetails({appId}: {appId: string}) {
+export async function getCrossAppProviderDetails({ appId }: { appId: string }) {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_PRIVY_AUTH_URL}/api/v1/apps/${appId}/cross-app/details`,
     {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json',
-        'privy-app-id': process.env.NEXT_PUBLIC_PRIVY_REQUESTER_APP_ID ?? '',
+        "Content-Type": "application/json",
+        "privy-app-id": process.env.NEXT_PUBLIC_PRIVY_APP_ID ?? "",
       },
-    },
+    }
   );
 
   const {
@@ -55,5 +58,5 @@ export async function getCrossAppProviderDetails({appId}: {appId: string}) {
     custom_api_url: string;
   };
 
-  return {url, name, iconUrl: icon_url};
+  return { url, name, iconUrl: icon_url };
 }

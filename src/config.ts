@@ -10,7 +10,7 @@ const connectors = connectorsForWallets(
       groupName: "Recommended",
       wallets: [
         PrivyWallet({
-          providerAppId: process.env.NEXT_PUBLIC_PRIVY_PROVIDER_APP_ID ?? "", // the app id for the provider to connect to
+          providerAppId: "cm0csdzar0004elj3espeb2mz", // the app id for the provider to connect to TODO change to rainbow fields?
           defaultNetwork: mainnet.id,
         }),
       ],
