@@ -26,9 +26,10 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import MonoLabel from './components/MonoLabel';
-import { useAccount } from 'wagmi';
+import { useAccount, useDisconnect } from 'wagmi';
 
 const Home: NextPage = () => {
+  const {disconnect} = useDisconnect();
   const {address} = useAccount();
   return (
     <div className={styles.container}>
@@ -57,9 +58,31 @@ const Home: NextPage = () => {
           <p>
             address: <MonoLabel label={address!} />
           </p>
-            <Balance />
-            <SignMessage />
-            <SendTransaction />
+          <Balance />
+                <Signer />
+                <SignMessage />
+                <SignTypedData />
+                <PublicClient />
+                <EnsName />
+                <EnsAddress />
+                <EnsAvatar />
+                <EnsResolver />
+                <SwitchNetwork />
+                <BlockNumber />
+                <SendTransaction />
+                <ContractRead />
+                <ContractReads />
+                <ContractWrite />
+                <ContractEvent />
+                <FeeData />
+                <Token />
+                <Transaction />
+                <WatchPendingTransactions />
+                <WalletClient />
+                <WaitForTransaction />
+
+                <h2 className="mt-6 text-2xl">useDisconnect</h2>
+                <Button onClick_={disconnect} cta="Disconnect from WAGMI" />
           </>
         }
         </div>
