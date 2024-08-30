@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import Button from './Button';
-import MonoLabel from './MonoLabel';
-import {useAccount} from 'wagmi';
-import {useSwitchChain} from 'wagmi';
+import Button from "./Button";
+import MonoLabel from "./MonoLabel";
+import { useAccount } from "wagmi";
+import { useSwitchChain } from "wagmi";
 
 const SwitchNetwork = () => {
-  const {chain} = useAccount();
+  const { chain } = useAccount();
 
-  const {chains, error: switchNetworkError, switchChain} = useSwitchChain();
+  const { chains, error: switchNetworkError, switchChain } = useSwitchChain();
 
   return (
     <>
@@ -24,12 +24,14 @@ const SwitchNetwork = () => {
           <Button
             disabled={!switchChain || x.id === chain?.id}
             key={x.id}
-            onClick_={() => switchChain?.({chainId: x.id})}
+            onClick_={() => switchChain?.({ chainId: x.id })}
             cta={x.name}
           />
         ))}
         {switchNetworkError && (
-          <div>Network switch error: {JSON.stringify(switchNetworkError, null, 2)}</div>
+          <div>
+            Network switch error: {JSON.stringify(switchNetworkError, null, 2)}
+          </div>
         )}
       </div>
     </>

@@ -1,6 +1,6 @@
 import { connectorsForWallets } from "@rainbow-me/rainbowkit";
 import { createConfig, http } from "wagmi";
-import { mainnet } from "wagmi/chains";
+import { mainnet, sepolia, base, baseSepolia } from "wagmi/chains";
 
 import { toPrivyWallet } from "@privy-io/cross-app-connect";
 
@@ -23,13 +23,16 @@ const connectors = connectorsForWallets(
   {
     appName: "Privy",
     projectId: "Example",
-  }
+  },
 );
 
 export const wagmiConfig = createConfig({
-  chains: [mainnet],
+  chains: [mainnet, sepolia, base, baseSepolia],
   transports: {
     [mainnet.id]: http(),
+    [sepolia.id]: http(),
+    [base.id]: http(),
+    [baseSepolia.id]: http(),
   },
   connectors,
   ssr: true,
