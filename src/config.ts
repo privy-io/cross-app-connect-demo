@@ -10,10 +10,11 @@ const connectors = connectorsForWallets(
       groupName: "Recommended",
       wallets: [
         toPrivyWallet({
-          id: "clxazfgyz000110geifn9qafg", // the app id for the provider to connect to
-          name: "Blackbird Fly",
+          id: "clxazfgyz000110geifn9qafg", // The Privy app id of provider application
+          name: "Blackbird Fly", // The name of the provider application
           iconUrl:
-            "https://imagedelivery.net/oHBRUd2clqykxgDWmeAyLg/313d1bc4-d395-48df-5598-31305ea2d600/icon", // TODO: change
+            "https://imagedelivery.net/oHBRUd2clqykxgDWmeAyLg/313d1bc4-d395-48df-5598-31305ea2d600/icon", // The icon to appear in the connector modal
+          // @ts-expect-error
           apiUrl: "https://auth.staging.privy.io",
         }),
       ],
