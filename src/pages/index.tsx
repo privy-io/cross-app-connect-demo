@@ -16,6 +16,7 @@ import Signer from "./components/Signer";
 const Home: NextPage = () => {
   const { disconnect } = useDisconnect();
   const { address } = useAccount();
+
   return (
     <div className={styles.container}>
       <Head>
