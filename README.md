@@ -4,7 +4,7 @@ This is a demo NextJS app that showcases how requester applications can use [Rai
 
 To try the demo, go to https://cross-app-connect-demo.vercel.app/ and connect to the provider app wallet. Once connected, click the buttons to invoke various [`wagmi`](https://wagmi.sh/) hooks, like `useSignMessage`, to interface with your connected cross app wallet.
 
-**Check out our [cross app connect guide](https://docs.privy.io/guide/react/cross-app/connect-only) for more guidance!**
+**Check out our [cross app connect docs](https://docs.privy.io/guide/react/cross-app/cross-app-connect) for more guidance!**
 
 # Setup
 
