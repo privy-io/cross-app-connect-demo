@@ -1,6 +1,6 @@
 # Privy Cross App Connect Demo
 
-This is a demo NextJS app that showcases how requester applications can use [RainbowKit](https://rainbowkit.com) to connect to [Privy](https://www.privy.io/) wallets created by provider applications. Requester apps do not need to be using Privy to access the cross app wallets, they can simply use the RainbowKit connector as provided in the [`@privy-io/cross-app-connect`](https://www.npmjs.com/package/@privy-io) package.
+This is a demo NextJS app that showcases how requester applications can use [RainbowKit](https://rainbowkit.com) to connect to [Privy](https://www.privy.io/) wallets created by provider applications. Requester apps do not need to be using Privy to access the cross app wallets, they can simply use the RainbowKit connector as provided in the [`@privy-io/cross-app-connect`](https://www.npmjs.com/package/@privy-io/cross-app-connect) package.
 
 To try the demo, go to https://cross-app-connect-demo.vercel.app/ and connect to the provider app wallet. Once connected, click the buttons to invoke various [`wagmi`](https://wagmi.sh/) hooks, like `useSignMessage`, to interface with your connected cross app wallet.
 
