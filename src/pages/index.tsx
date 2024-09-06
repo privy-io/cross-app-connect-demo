@@ -33,7 +33,11 @@ const Home: NextPage = () => {
           <br></br>
           Once you connect your wallet with RainbowKit, you can use wagmi
           functionality to interact with the wallet. <br></br>
-          To create your provider wallet before connecting, log in <u><a href='https://strawberry-fields.vercel.app/'> here </a></u>
+          To create your provider wallet before connecting, log in{" "}
+          <u>
+            <a href="https://strawberry-fields.vercel.app/"> here </a>
+          </u>
+          . To get started, connect using our demo app, 🍓 Strawberry Fields.
         </p>
 
         <div>
