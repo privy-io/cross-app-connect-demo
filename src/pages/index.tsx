@@ -35,7 +35,7 @@ const Home: NextPage = () => {
           functionality to interact with the wallet. <br />
           To create your provider wallet before connecting, log in{" "}
           <u>
-            <a href="https://strawberry-fields.vercel.app/"> here </a>
+            <a href="https://strawberry-fields.vercel.app/"> here</a>
           </u>
           .<br />
           To get started, connect using our demo app, 🍓 Strawberry Fields.
