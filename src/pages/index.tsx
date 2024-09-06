@@ -30,10 +30,15 @@ const Home: NextPage = () => {
 
         <p className={styles.description}>
           This demo showcases how to use the Privy RainbowKit connector.
-          <br></br>
+          <br />
           Once you connect your wallet with RainbowKit, you can use wagmi
-          functionality to interact with the wallet. <br></br>
-          To create your provider wallet before connecting, log in <u><a href='https://strawberry-fields.vercel.app/'> here </a></u>
+          functionality to interact with the wallet. <br />
+          To create your provider wallet before connecting, log in{" "}
+          <u>
+            <a href="https://strawberry-fields.vercel.app/"> here</a>
+          </u>
+          .<br />
+          To get started, connect using our demo app, 🍓 Strawberry Fields.
         </p>
 
         <div>
