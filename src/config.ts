@@ -2,7 +2,7 @@ import { connectorsForWallets } from "@rainbow-me/rainbowkit";
 import { createConfig, http } from "wagmi";
 import { mainnet, sepolia, base, baseSepolia } from "wagmi/chains";
 
-import { toPrivyWallet } from "@privy-io/cross-app-connect";
+import { toPrivyWallet } from "@privy-io/cross-app-connect/rainbow-kit";
 
 const connectors = connectorsForWallets(
   [
