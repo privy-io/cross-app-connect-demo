@@ -4,7 +4,6 @@ import PublicClient from "./components/PublicClient";
 import SendTransaction from "./components/SendTransaction";
 import SignMessage from "./components/SignMessage";
 import SignTypedData from "./components/SignTypedData";
-import SwitchNetwork from "./components/SwitchNetwork";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -20,25 +19,20 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>RainbowKit App</title>
+        <title>Monad Demo App</title>
       </Head>
 
       <main className={styles.main}>
         <ConnectButton />
 
-        <h1 className={styles.title}>Welcome to Privy + RainbowKit!</h1>
+        <h1 className={styles.title}>Welcome to Privy + Monad!</h1>
 
         <p className={styles.description}>
-          This demo showcases how to use the Privy RainbowKit connector.
+          This demo showcases how to use the Monad Ecosystem Wallet with a
+          RainbowKit connector.
           <br />
-          Once you connect your wallet with RainbowKit, you can use wagmi
-          functionality to interact with the wallet. <br />
-          To create your provider wallet before connecting, log in{" "}
-          <u>
-            <a href="https://strawberry-fields.vercel.app/"> here</a>
-          </u>
-          .<br />
-          To get started, connect using our demo app, 🍓 Strawberry Fields.
+          Once you connect your wallet, you can use wagmi functionality to
+          interact with the wallet. <br />
         </p>
 
         <div>
@@ -53,7 +47,6 @@ const Home: NextPage = () => {
               <SignMessage />
               <SignTypedData />
               <PublicClient />
-              <SwitchNetwork />
               <SendTransaction />
 
               <h2 className="mt-6 text-2xl">useDisconnect</h2>

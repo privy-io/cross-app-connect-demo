@@ -1,6 +1,6 @@
 import { connectorsForWallets } from "@rainbow-me/rainbowkit";
 import { createConfig, http } from "wagmi";
-import { mainnet, sepolia, base, baseSepolia } from "wagmi/chains";
+import { monadTestnet } from "wagmi/chains";
 
 import { toPrivyWallet } from "@privy-io/cross-app-connect/rainbow-kit";
 
@@ -10,27 +10,23 @@ const connectors = connectorsForWallets(
       groupName: "Recommended",
       wallets: [
         toPrivyWallet({
-          id: "clxva96js0039k9pb3pw2uovx", // The Privy app id of provider application
-          name: "Strawberry Fields", // The name of the provider application
-          iconUrl:
-            "https://privy-assets-public.s3.amazonaws.com/strawberry.png", // The icon to appear in the connector modal
+          id: "cm7vcg3i5006nks9xmobmfxlw", // The Privy app id of provider application
+          name: "Monad Demo", // The name of the provider application
+          iconUrl: "https://i.postimg.cc/MpWYyzD7/monad-logo-500w.png", // The icon to appear in the connector modal
         }),
       ],
     },
   ],
   {
-    appName: "Privy",
+    appName: "Privy Demo",
     projectId: "Example",
   }
 );
 
 export const wagmiConfig = createConfig({
-  chains: [mainnet, sepolia, base, baseSepolia],
+  chains: [monadTestnet],
   transports: {
-    [mainnet.id]: http(),
-    [sepolia.id]: http(),
-    [base.id]: http(),
-    [baseSepolia.id]: http(),
+    [monadTestnet.id]: http(),
   },
   connectors,
   ssr: true,

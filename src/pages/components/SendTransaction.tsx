@@ -1,25 +1,29 @@
-'use client';
+"use client";
 
-import Button from './Button';
-import Wrapper from './Wrapper';
-import {parseEther} from 'viem';
-import type {Config} from 'wagmi';
-import {useSendTransaction} from 'wagmi';
-import type {SendTransactionVariables} from 'wagmi/query';
+import Button from "./Button";
+import Wrapper from "./Wrapper";
+import { parseEther } from "viem";
+import type { Config } from "wagmi";
+import { useSendTransaction } from "wagmi";
+import type { SendTransactionVariables } from "wagmi/query";
 
 const SendTransaction = () => {
   const transactionRequest: SendTransactionVariables<Config, number> = {
-    to: '0xF2A919977c6dE88dd8ed90feAADFcC5d65D66038' as `0x${string}`,
-    value: parseEther('0.001'),
-    type: 'eip1559',
+    to: "0xF2A919977c6dE88dd8ed90feAADFcC5d65D66038" as `0x${string}`,
+    value: parseEther("0.0001"),
+    type: "eip1559",
   };
 
-  const {data, isPending, isSuccess, sendTransaction} = useSendTransaction();
+  const { data, isPending, isSuccess, sendTransaction } = useSendTransaction();
 
   return (
     <Wrapper title="useSendTransaction">
       <div className="rounded bg-red-400 px-2 py-1 text-sm text-white">
-        We recommend doing this on sepolia.
+        You can get some funds from{" "}
+        <a href="https://testnet.monad.xyz/" target="_blank" rel="noreferrer">
+          <b>the faucet</b>
+        </a>
+        .
       </div>
       <Button
         cta="Send to privy.io.eth"
