@@ -10,8 +10,8 @@ const connectors = connectorsForWallets(
       groupName: "Recommended",
       wallets: [
         toPrivyWallet({
-          id: "clxva96js0039k9pb3pw2uovx", // The Privy app id of provider application
-          name: "Strawberry Fields", // The name of the provider application
+          id: "cm2jh6ypm05cx1n3tkx5djr68", // The Privy app id of provider application
+          name: "Ponder", // The name of the provider application
           iconUrl:
             "https://privy-assets-public.s3.amazonaws.com/strawberry.png", // The icon to appear in the connector modal
         }),
