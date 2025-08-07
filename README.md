@@ -1,26 +1,30 @@
-# Privy Cross App Connect Demo
+# Cross-App Connect Demo
 
-This is a demo NextJS app that showcases how requester applications can use [RainbowKit](https://rainbowkit.com) to connect to [Privy](https://www.privy.io/) wallets created by provider applications. Requester apps do not need to be using Privy to access the cross app wallets, they can simply use the RainbowKit connector as provided in the [`@privy-io/cross-app-connect`](https://www.npmjs.com/package/@privy-io/cross-app-connect) package.
+This is an example app showcasing ConnectKit + Privy wallets.
 
-To try the demo, go to https://cross-app-connect-demo.vercel.app/ and connect to the provider app wallet. Once connected, click the buttons to invoke various [`wagmi`](https://wagmi.sh/) hooks, like `useSignMessage`, to interface with your connected cross app wallet.
+This is a demo NextJS app that showcases how requester applications can use ConnectKit to connect to Privy wallets created by provider applications. Requester apps do not need to be using Privy to access the cross app wallets, they can simply use the ConnectKit connector as provided in the @privy-io/cross-app-connect package.
 
-**Check out our [cross app connect docs](https://docs.privy.io/guide/react/cross-app/cross-app-connect) for more guidance!**
+Check out our [cross app connect docs](https://docs.privy.io/wallets/global-wallets/integrate-a-global-wallet/connectkit-connector) for more guidance!
 
-# Setup
+## Key Files to Check Out
 
-1. Fork this repository, clone it, and open it in your terminal.
+- [`src/lib/privy-global-connector.tsx`](src/lib/privy-global-connector.tsx) - Custom wagmi connector to enable Privy wallets with ConnectKit
+- [`src/app/providers.tsx`](src/app/providers.tsx) - Provider setup
 
-```sh
-git clone https://github.com/<your-github-handle>/cross-app-connect-demo
+## Getting Started
+
+First, run the development server:
+
+```bash
+pnpm dev
 ```
 
-2. Install the necessary dependencies by running `npm i`.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Building locally
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-In your project directory, run `npm run dev`. You can now visit http://localhost:3000 to see your app and login with Privy!
+## Deploy on Vercel
 
-## Check out:
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-`src/config` for how to add the Privy wallet connector to your RainbowKit `ConnectButton`.
-`src/pages/components` for how to use Wagmi hooks to interact with the cross app wallet.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
